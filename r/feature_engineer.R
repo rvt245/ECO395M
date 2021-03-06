@@ -56,7 +56,7 @@ ggplot(load_combined) +
 # as well as a general upward trend as time marches on (pop growth).  
 # We also expect power consumption to vary on a finer time scale:
 #   - across the day (wake vs. sleep)
-#   - aross the week (weekend vs. weekday)
+#   - across the week (weekend vs. weekday)
 
 # Let's use the functions in lubridate to engineer some relevant
 # features from the Time variable.
@@ -88,7 +88,7 @@ rmse(lm1, load_test)
 lm2 = lm(COAST ~ KHOU + KHOU_squared + month + weeks_elapsed, data=load_train)
 
 # noticeable improvement on testing set
-rmse(lm2, load_train)
+rmse(lm1, load_test)
 rmse(lm2, load_test)
 
 # a bigger model that incorporates hourly and day-of-week effects,
